@@ -1,0 +1,149 @@
+.results {
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  background: var(--card-bg);
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(10px);
+  position: relative;
+  overflow: hidden;
+}
+
+.results h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: var(--neon-blue);
+  text-shadow: 0 0 10px var(--neon-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.journey-map {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.journey-step {
+  flex-basis: 30%;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  transition: all 0.3s ease;
+}
+
+.journey-step:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.journey-step h3 {
+  color: var(--neon-pink);
+  margin-bottom: 0.5rem;
+}
+
+.journey-step p {
+  color: var(--dark-text);
+}
+
+.next-steps {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+.next-steps h3 {
+  color: var(--neon-blue);
+  margin-bottom: 1rem;
+}
+
+.next-steps ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.next-steps li {
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.next-steps li::before {
+  content: '\f00c';
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  margin-right: 0.5rem;
+  color: var(--neon-pink);
+}
+
+.restart-button {
+  padding: 0.8rem 1.5rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+  background: linear-gradient(45deg, var(--neon-pink), var(--neon-blue));
+  border: none;
+  color: white;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px var(--neon-pink);
+  display: inline-flex;
+  align-items: center;
+}
+
+.restart-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px var(--neon-blue);
+}
+
+.icon {
+  margin-right: 8px;
+  font-size: 1.2rem;
+}
+
+.nature-element {
+  position: absolute;
+  opacity: 0.7;
+}
+
+.leaf {
+  top: 10%;
+  left: 10%;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(45deg, var(--accent-1), var(--neon-blue));
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  animation: float 6s ease-in-out infinite;
+}
+
+.crystal {
+  bottom: 10%;
+  right: 10%;
+  width: 70px;
+  height: 90px;
+  background: linear-gradient(135deg, var(--neon-pink), var(--accent-2));
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  animation: float 8s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(5deg); }
+}
+
+@media screen and (max-width: 768px) {
+  .results {
+    padding: 1rem;
+  }
+
+  .journey-step {
+    flex-basis: 100%;
+  }
+}

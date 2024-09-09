@@ -1,0 +1,122 @@
+.payment-gateway {
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  background: var(--card-bg);
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(10px);
+  position: relative;
+  overflow: hidden;
+}
+
+.payment-gateway h2 {
+  color: var(--neon-blue);
+  text-shadow: 0 0 10px var(--neon-blue);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.payment-gateway p {
+  margin-bottom: 2rem;
+  color: var(--dark-text);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--neon-pink);
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid var(--neon-blue);
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--dark-text);
+  font-family: 'Roboto', sans-serif;
+}
+
+button {
+  padding: 0.8rem 1.5rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+  background: linear-gradient(45deg, var(--neon-pink), var(--neon-blue));
+  border: none;
+  color: white;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px var(--neon-pink);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px var(--neon-blue);
+}
+
+button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.cancel-button {
+  background: transparent;
+  border: 2px solid var(--neon-pink);
+  color: var(--neon-pink);
+  margin-top: 1rem;
+}
+
+.cancel-button:hover {
+  background: var(--neon-pink);
+  color: var(--light-bg);
+}
+
+.nature-element {
+  position: absolute;
+  opacity: 0.7;
+}
+
+.leaf {
+  top: 10%;
+  left: 10%;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(45deg, var(--accent-1), var(--neon-blue));
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  animation: float 6s ease-in-out infinite;
+}
+
+.crystal {
+  bottom: 10%;
+  right: 10%;
+  width: 70px;
+  height: 90px;
+  background: linear-gradient(135deg, var(--neon-pink), var(--accent-2));
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  animation: float 8s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(5deg); }
+}
+
+@media screen and (max-width: 768px) {
+  .payment-gateway {
+    padding: 1rem;
+  }
+}
