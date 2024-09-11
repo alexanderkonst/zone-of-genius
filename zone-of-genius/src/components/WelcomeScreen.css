@@ -37,7 +37,7 @@
   max-width: 400px;
   margin-left: auto;
   margin-right: auto;
-  color: var(--dark-text);
+  color: var(--light-text);
 }
 
 .breathing-bubble {
@@ -45,9 +45,9 @@
   height: 180px;
   background: radial-gradient(circle at 30% 30%, var(--neon-pink), var(--neon-blue));
   border-radius: 50%;
-  margin: 0 auto 2rem;
-  transition: transform 3.5s ease-in-out;
-  box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+  margin: 0 auto 1rem;
+  transition: transform 5.5s ease-in-out;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
   position: relative;
   overflow: hidden;
 }
@@ -63,6 +63,13 @@
   animation: rotate 10s linear infinite;
 }
 
+.breathing-instruction {
+  font-size: 1rem;
+  color: var(--neon-blue);
+  margin-bottom: 2rem;
+  font-style: italic;
+}
+
 @keyframes rotate {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
@@ -72,12 +79,11 @@
   padding: 1rem 2rem;
   font-size: 1rem;
   cursor: pointer;
-  background: linear-gradient(45deg, var(--neon-pink), var(--neon-blue));
-  border: none;
-  color: white;
+  background: var(--neon-blue);
+  color: var(--background);
   border-radius: 50px;
   transition: all 0.3s ease;
-  box-shadow: 0 0 20px rgba(255, 106, 213, 0.5);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -85,56 +91,10 @@
   overflow: hidden;
 }
 
-.pulsating-button::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle at center, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 60%);
-  animation: pulse 2s linear infinite;
-}
-
-@keyframes pulse {
-  0% { transform: scale(0.8); opacity: 0.7; }
-  50% { transform: scale(1); opacity: 1; }
-  100% { transform: scale(0.8); opacity: 0.7; }
-}
-
 .pulsating-button:hover {
+  background: var(--neon-pink);
   transform: translateY(-2px);
-  box-shadow: 0 0 30px rgba(255, 106, 213, 0.7);
-}
-
-.nature-element {
-  position: absolute;
-  opacity: 0.7;
-}
-
-.leaf {
-  top: 10%;
-  left: 10%;
-  width: 60px;
-  height: 60px;
-  background: linear-gradient(45deg, var(--accent-1), var(--neon-blue));
-  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-  animation: float 6s ease-in-out infinite;
-}
-
-.crystal {
-  bottom: 10%;
-  right: 10%;
-  width: 70px;
-  height: 90px;
-  background: linear-gradient(135deg, var(--neon-pink), var(--accent-2));
-  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-  animation: float 8s ease-in-out infinite;
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0) rotate(0deg); }
-  50% { transform: translateY(-20px) rotate(5deg); }
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
 }
 
 @media screen and (max-width: 768px) {
@@ -161,4 +121,50 @@
     width: 120px;
     height: 120px;
   }
+}
+
+.user-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.user-form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid var(--neon-blue);
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--dark-text);
+}
+
+.user-form input::placeholder {
+  color: var(--light-text);
+  opacity: 0.7; /* Make the placeholder slightly more transparent */
+}
+
+.error-message {
+  color: var(--neon-pink);
+  margin-bottom: 10px;
+}
+
+.skip-button {
+  margin-top: 1rem;
+  background: transparent;
+  border: 1px solid var(--neon-blue);
+  color: var(--neon-blue);
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+}
+
+.skip-button:hover {
+  background: var(--neon-blue);
+  color: var(--background);
 }

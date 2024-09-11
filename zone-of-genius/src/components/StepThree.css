@@ -7,93 +7,55 @@
   background: var(--card-bg);
   border-radius: 20px;
   box-shadow: var(--shadow);
-  backdrop-filter: blur(10px);
   position: relative;
   overflow: hidden;
 }
 
 .step-three h2, .step-three h3 {
   color: var(--neon-blue);
-  text-shadow: 0 0 10px var(--neon-blue);
   margin-bottom: 1.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.inspiration {
-  background: rgba(255, 255, 255, 0.05);
+.meditation {
+  background: var(--light-bg);
   padding: 1.5rem;
   border-radius: 10px;
   margin-bottom: 2rem;
 }
 
-.inspiration ul {
-  text-align: left;
-  margin-bottom: 1rem;
-  list-style-type: none;
-  padding-left: 0;
-}
-
-.inspiration li {
-  margin-bottom: 0.5rem;
-  display: flex;
-  align-items: center;
-}
-
-.shareable-graphic textarea {
-  width: 100%;
-  padding: 0.8rem;
-  margin-bottom: 1rem;
-  border: 1px solid var(--neon-blue);
-  border-radius: 8px;
-  background-color: rgba(255, 255, 255, 0.05);
-  color: var(--dark-text);
-  font-family: 'Roboto', sans-serif;
-  resize: vertical;
-  box-sizing: border-box;
-}
-
-.color-picker {
-  margin-bottom: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.color-picker label {
-  margin-right: 1rem;
-  margin-bottom: 0.5rem;
-}
-
-.graphic-preview {
-  color: var(--dark-bg);
-  padding: 2rem;
+.meditation-timer {
+  background-color: var(--background);
   border-radius: 10px;
-  margin-bottom: 1rem;
-  transition: background-color 0.3s ease;
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
-}
-
-.graphic-preview p {
-  font-size: 1.5rem;
-  font-weight: bold;
-  font-family: 'Orbitron', sans-serif;
-  word-wrap: break-word;
-}
-
-.share-buttons {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 1rem;
+  padding: 1rem;
   margin-top: 1rem;
 }
 
-.share-buttons button {
-  padding: 0.5rem 1rem;
-  font-size: 0.9rem;
+.meditation-progress-container {
+  background-color: var(--light-bg);
+  border-radius: 5px;
+  height: 10px;
+  overflow: hidden;
+}
+
+.meditation-progress {
+  height: 100%;
+  background: linear-gradient(90deg, var(--neon-pink), var(--neon-blue));
+  transition: width 1s linear;
+}
+
+.note-taking textarea {
+  width: 100%;
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  border: 1px solid var(--light-text);
+  border-radius: 8px;
+  background-color: var(--background);
+  color: var(--dark-text);
+  font-family: 'Roboto', sans-serif;
+  resize: vertical;
 }
 
 .button-group {
@@ -102,53 +64,22 @@
   margin-top: 2rem;
 }
 
-.back-button {
-  background: transparent;
-  border: 2px solid var(--neon-pink);
-  color: var(--neon-pink);
-}
-
-.back-button:hover {
-  background: var(--neon-pink);
-  color: var(--dark-bg);
-}
-
-.next-button {
+.back-button, .next-button {
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  cursor: pointer;
   background: var(--neon-blue);
+  border: none;
+  color: var(--background);
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
 }
 
-.next-button:hover {
+.back-button:hover, .next-button:hover {
   background: var(--neon-pink);
-}
-
-.nature-element {
-  position: absolute;
-  opacity: 0.7;
-}
-
-.leaf {
-  top: 10%;
-  left: 10%;
-  width: 60px;
-  height: 60px;
-  background: linear-gradient(45deg, var(--accent-1), var(--neon-blue));
-  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-  animation: float 6s ease-in-out infinite;
-}
-
-.crystal {
-  bottom: 10%;
-  right: 10%;
-  width: 70px;
-  height: 90px;
-  background: linear-gradient(135deg, var(--neon-pink), var(--accent-2));
-  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-  animation: float 8s ease-in-out infinite;
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0) rotate(0deg); }
-  50% { transform: translateY(-20px) rotate(5deg); }
+  transform: translateY(-2px);
 }
 
 @media screen and (max-width: 768px) {
@@ -160,4 +91,39 @@
     flex-direction: column;
     gap: 1rem;
   }
+}
+
+/* Add these styles to the existing StepThree.css */
+
+.breath-bubble {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin: 20px auto;
+  background: radial-gradient(circle at 30% 30%, var(--neon-pink), var(--neon-blue));
+  transition: transform 4s ease-in-out;
+}
+
+.breath-bubble.inhale {
+  animation: inhale 4s ease-in-out infinite;
+}
+
+.breath-bubble.exhale {
+  animation: exhale 4s ease-in-out infinite;
+}
+
+@keyframes inhale {
+  from { transform: scale(1); }
+  to { transform: scale(1.5); }
+}
+
+@keyframes exhale {
+  from { transform: scale(1.5); }
+  to { transform: scale(1); }
+}
+
+.breath-instruction {
+  font-size: 1.2rem;
+  margin-top: 10px;
+  color: var(--neon-blue);
 }

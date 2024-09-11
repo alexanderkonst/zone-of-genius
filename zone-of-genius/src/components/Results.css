@@ -7,7 +7,6 @@
   background: var(--card-bg);
   border-radius: 20px;
   box-shadow: var(--shadow);
-  backdrop-filter: blur(10px);
   position: relative;
   overflow: hidden;
 }
@@ -23,18 +22,16 @@
 }
 
 .journey-map {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
   margin-bottom: 2rem;
 }
 
 .journey-step {
-  flex-basis: 30%;
   background: rgba(255, 255, 255, 0.1);
   border-radius: 15px;
   padding: 1.5rem;
-  margin-bottom: 1rem;
   transition: all 0.3s ease;
 }
 
@@ -84,7 +81,14 @@
   color: var(--neon-pink);
 }
 
-.restart-button {
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.download-button, .restart-button {
   padding: 0.8rem 1.5rem;
   font-size: 1.1rem;
   cursor: pointer;
@@ -98,7 +102,7 @@
   align-items: center;
 }
 
-.restart-button:hover {
+.download-button:hover, .restart-button:hover {
   transform: translateY(-2px);
   box-shadow: 0 0 20px var(--neon-blue);
 }
@@ -143,7 +147,47 @@
     padding: 1rem;
   }
 
-  .journey-step {
-    flex-basis: 100%;
+  .results h2 {
+    font-size: 2rem;
   }
+
+  .journey-step {
+    padding: 1rem;
+  }
+}
+
+/* Add these styles to the existing Results.css */
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: var(--card-bg);
+  padding: 2rem;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.modal-buttons button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
 }

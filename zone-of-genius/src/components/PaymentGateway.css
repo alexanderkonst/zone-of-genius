@@ -26,6 +26,22 @@
   color: var(--dark-text);
 }
 
+.dummy-notice {
+  background-color: #fff3cd;
+  border: 1px solid #ffeeba;
+  color: #856404;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  border-radius: 5px;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(255, 243, 205, 0.4); }
+  70% { box-shadow: 0 0 0 10px rgba(255, 243, 205, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 243, 205, 0); }
+}
+
 .form-group {
   margin-bottom: 1.5rem;
   text-align: left;
@@ -45,9 +61,15 @@
   background-color: rgba(255, 255, 255, 0.1);
   color: var(--dark-text);
   font-family: 'Roboto', sans-serif;
+  transition: all 0.3s ease;
 }
 
-button {
+.form-group input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--neon-blue);
+}
+
+.pay-button {
   padding: 0.8rem 1.5rem;
   font-size: 1.1rem;
   cursor: pointer;
@@ -63,24 +85,34 @@ button {
   margin-top: 1rem;
 }
 
-button:hover {
+.pay-button:hover {
   transform: translateY(-2px);
   box-shadow: 0 0 20px var(--neon-blue);
 }
 
-button:disabled {
+.pay-button:disabled {
   opacity: 0.7;
   cursor: not-allowed;
 }
 
-.cancel-button {
-  background: transparent;
-  border: 2px solid var(--neon-pink);
-  color: var(--neon-pink);
+.button-group {
+  display: flex;
+  justify-content: space-between;
   margin-top: 1rem;
 }
 
-.cancel-button:hover {
+.skip-button, .cancel-button {
+  background: transparent;
+  border: 2px solid var(--neon-pink);
+  color: var(--neon-pink);
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+}
+
+.skip-button:hover, .cancel-button:hover {
   background: var(--neon-pink);
   color: var(--light-bg);
 }
@@ -118,5 +150,10 @@ button:disabled {
 @media screen and (max-width: 768px) {
   .payment-gateway {
     padding: 1rem;
+  }
+
+  .button-group {
+    flex-direction: column;
+    gap: 1rem;
   }
 }

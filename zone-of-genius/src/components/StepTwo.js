@@ -16,8 +16,6 @@ function StepTwo({ onNext, onBack }) {
 
   return (
     <div className="step-two">
-      <div className="nature-element leaf"></div>
-      <div className="nature-element crystal"></div>
       <h2><i className="fas fa-rocket icon"></i>Apply Your Zone of Genius</h2>
       <div className="inspiration">
         <h3><i className="fas fa-lightbulb icon"></i>Inspiration</h3>

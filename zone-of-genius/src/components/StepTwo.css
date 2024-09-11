@@ -7,63 +7,49 @@
   background: var(--card-bg);
   border-radius: 20px;
   box-shadow: var(--shadow);
-  backdrop-filter: blur(10px);
   position: relative;
   overflow: hidden;
 }
 
 .step-two h2, .step-two h3 {
   color: var(--neon-blue);
-  text-shadow: 0 0 10px var(--neon-blue);
   margin-bottom: 1.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.infographic img {
-  max-width: 100%;
-  height: auto;
-  margin-bottom: 2rem;
-  border: 2px solid var(--neon-pink);
-  border-radius: 10px;
-  box-shadow: 0 0 15px rgba(255, 106, 213, 0.3);
-}
-
-.meditation {
-  margin-bottom: 2rem;
-  background: rgba(255, 255, 255, 0.1);
+.inspiration {
+  background: var(--light-bg);
   padding: 1.5rem;
   border-radius: 10px;
+  margin-bottom: 2rem;
+  text-align: left;
 }
 
-.meditation-timer {
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
-  padding: 1rem;
-  margin-top: 1rem;
+.inspiration ul {
+  list-style-type: none;
+  padding-left: 0;
 }
 
-.meditation-progress-container {
-  background-color: rgba(255, 255, 255, 0.2);
-  border-radius: 5px;
-  height: 10px;
-  overflow: hidden;
+.inspiration li {
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
 }
 
-.meditation-progress {
-  height: 100%;
-  background: linear-gradient(90deg, var(--neon-pink), var(--neon-blue));
-  transition: width 1s linear;
+.inspiration li i {
+  margin-right: 10px;
+  color: var(--neon-pink);
 }
 
-.note-taking textarea {
+.zog-statement textarea {
   width: 100%;
   padding: 0.8rem;
   margin-bottom: 1rem;
-  border: 1px solid var(--neon-blue);
+  border: 1px solid var(--light-text);
   border-radius: 8px;
-  background-color: rgba(255, 255, 255, 0.05);
+  background-color: var(--background);
   color: var(--dark-text);
   font-family: 'Roboto', sans-serif;
   resize: vertical;
@@ -73,57 +59,23 @@
 .button-group {
   display: flex;
   justify-content: space-between;
-  margin-top: 1rem;
+  margin-top: 2rem;
 }
 
-.back-button {
-  background: transparent;
-  border: 2px solid var(--neon-pink);
-  color: var(--neon-pink);
-}
-
-.back-button:hover {
-  background: var(--neon-pink);
-  color: var(--light-bg);
-}
-
-.next-button {
+.back-button, .next-button {
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  cursor: pointer;
   background: var(--neon-blue);
-  color: var(--light-bg);
+  border: none;
+  color: var(--background);
+  border-radius: 25px;
+  transition: all 0.3s ease;
 }
 
-.next-button:hover {
+.back-button:hover, .next-button:hover {
   background: var(--neon-pink);
-}
-
-.nature-element {
-  position: absolute;
-  opacity: 0.7;
-}
-
-.leaf {
-  top: 10%;
-  left: 10%;
-  width: 60px;
-  height: 60px;
-  background: linear-gradient(45deg, var(--accent-1), var(--neon-blue));
-  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-  animation: float 6s ease-in-out infinite;
-}
-
-.crystal {
-  bottom: 10%;
-  right: 10%;
-  width: 70px;
-  height: 90px;
-  background: linear-gradient(135deg, var(--neon-pink), var(--accent-2));
-  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-  animation: float 8s ease-in-out infinite;
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0) rotate(0deg); }
-  50% { transform: translateY(-20px) rotate(5deg); }
+  transform: translateY(-2px);
 }
 
 @media screen and (max-width: 768px) {

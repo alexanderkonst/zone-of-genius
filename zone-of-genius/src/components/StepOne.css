@@ -7,7 +7,6 @@
   background: var(--card-bg);
   border-radius: 20px;
   box-shadow: var(--shadow);
-  backdrop-filter: blur(10px);
   position: relative;
   overflow: hidden;
 }
@@ -15,12 +14,11 @@
 .step-one h2 {
   color: var(--neon-blue);
   margin-bottom: 2rem;
-  text-shadow: 0 0 10px var(--neon-blue);
 }
 
 .video-explainer {
   margin-bottom: 2rem;
-  border: 2px solid var(--neon-pink);
+  border: 1px solid var(--neon-pink);
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 0 15px rgba(255, 106, 213, 0.2);
@@ -37,13 +35,13 @@
 .question {
   margin-bottom: 1.5rem;
   text-align: left;
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--light-bg);
   padding: 1.5rem;
   border-radius: 10px;
 }
 
 .question p {
-  color: var(--neon-pink);
+  color: var(--dark-text);
   font-weight: bold;
   font-size: 1.1rem;
   margin-bottom: 1rem;
@@ -55,8 +53,8 @@
   width: 100%;
   padding: 0.8rem;
   margin-bottom: 0.8rem;
-  background-color: transparent;
-  border: 1px solid var(--neon-blue);
+  background-color: var(--background);
+  border: 1px solid var(--light-text);
   color: var(--dark-text);
   border-radius: 5px;
   cursor: pointer;
@@ -67,24 +65,8 @@
 
 .question button:hover, .question button.selected {
   background-color: var(--neon-blue);
-  color: var(--light-bg);
-}
-
-.next-button {
-  padding: 0.8rem 1.5rem;
-  font-size: 1.1rem;
-  cursor: pointer;
-  background: linear-gradient(45deg, var(--neon-pink), var(--neon-blue));
-  border: none;
-  color: var(--light-bg);
-  border-radius: 25px;
-  transition: all 0.3s ease;
-  box-shadow: 0 0 10px var(--neon-pink);
-}
-
-.next-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 0 20px var(--neon-blue);
+  border-color: var(--neon-blue);
+  color: var(--background);
 }
 
 .error-message {
@@ -92,34 +74,26 @@
   margin-top: 1rem;
 }
 
-.nature-element {
-  position: absolute;
-  opacity: 0.7;
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
 }
 
-.leaf {
-  top: 10%;
-  left: 10%;
-  width: 60px;
-  height: 60px;
-  background: linear-gradient(45deg, var(--accent-1), var(--neon-blue));
-  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-  animation: float 6s ease-in-out infinite;
+.back-button, .next-button {
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  background: var(--neon-blue);
+  border: none;
+  color: var(--background);
+  border-radius: 25px;
+  transition: all 0.3s ease;
 }
 
-.crystal {
-  bottom: 10%;
-  right: 10%;
-  width: 70px;
-  height: 90px;
-  background: linear-gradient(135deg, var(--neon-pink), var(--accent-2));
-  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-  animation: float 8s ease-in-out infinite;
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0) rotate(0deg); }
-  50% { transform: translateY(-20px) rotate(5deg); }
+.back-button:hover, .next-button:hover {
+  background: var(--neon-pink);
+  transform: translateY(-2px);
 }
 
 @media screen and (max-width: 768px) {
@@ -130,21 +104,4 @@
   .question button {
     padding: 0.6rem;
   }
-}
-
-.button-group {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 2rem;
-}
-
-.back-button {
-  background: transparent;
-  border: 2px solid var(--neon-pink);
-  color: var(--neon-pink);
-}
-
-.back-button:hover {
-  background: var(--neon-pink);
-  color: var(--dark-bg);
 }
